@@ -1,0 +1,27 @@
+body {
+    background:silver;
+    font-family:"Arial Black";
+}
+
+p{
+    color:green;
+    font-style:italic;
+    font-family:"monotype corsiva";
+}
+
+h3,h4 {
+
+    font-family:Arial black;
+}
+
+h3{
+    color:blue;
+}
+
+h4{
+  color:yellow;
+}
+
+li{
+    font-size:12px;
+}
