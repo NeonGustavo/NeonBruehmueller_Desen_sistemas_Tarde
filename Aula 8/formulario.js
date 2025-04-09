@@ -1,54 +1,44 @@
-//Executar máscaras
-function mascara(o,f) { //DEFINE O OBJETO  E CHAMA A FUNÇÃO
-    objeto=o
-    funcao=f
-    setTimeout ("executaMascara()",1)
+// Executar máscaras
+function mascara(o, f) {
+    objeto = o;
+    funcao = f;
+    setTimeout("executaMascara()", 1);
 }
 
 function executaMascara() {
-       objeto.value=funcao(objeto.value)
+    objeto.value = funcao(objeto.value);
 }
 
-//MASCARAS
+// MÁSCARAS
 
-//Mascara do Telefone
+// Máscara do Telefone
 function telefone(variavel) {
-
-    variavel=variavel.replace(/\D/g,"")//Remove o que não é digito
-    variavel=variavel.replace(/^(\d\d(\d)/g,"($1) $2")
-    variavel=variavel.replace/(d{4}(\d)/,"$1-$2")//Remove o que não é digito
-    return variavel
-
+    variavel = variavel.replace(/\D/g, ""); // Remove o que não é dígito
+    variavel = variavel.replace(/^(\d{2})(\d)/g, "($1) $2"); // Coloca os parênteses no DDD
+    variavel = variavel.replace(/(\d{4,5})(\d{4})$/, "$1-$2"); // Coloca o hífen
+    return variavel;
 }
 
-//Mascara do RG e CPF
-
-function RGeCPF(variavel){
-    variavel=variavel.replace (/\D/g,"")
-   //COLOCA UM PONTO APÓS O TERCEIRO DIGITO E O QUARTO DIGITO
-    variavel=variavel.replace(/(\d{3})\d),("1.$2")
-   //COLOCA UM PONTO APÓS DO SEXTO E E DEPOIS DO SÉTIMO
-    variavel=variavel.replace(/(\d{3})\d),("1.$2")
-    //Coloca hífem após o sétimo digito e permite apenas 2 digitos após o hifem
-    variavel=variavel.replacee(/(\d{3})\d{1,2})$/,("1.$2"))
+// Máscara do RG e CPF
+function RGeCPF(variavel) {
+    variavel = variavel.replace(/\D/g, "");
+    variavel = variavel.replace(/(\d{3})(\d)/, "$1.$2"); // 000.000
+    variavel = variavel.replace(/(\d{3})(\d)/, "$1.$2"); // 000.000.000
+    variavel = variavel.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // 000.000.000-00
+    return variavel;
 }
 
-//mascara do cep 
-
+// Máscara do CEP
 function cep(variavel) {
-    variavel=variavel.replace (/\D/g,"")
-
-    variavel=variavel.replace (/(\d{2})(\d)/,"1.$2")
-
-    variavel=variavel.replace (/(\d{2})(\d)/,"1.$2")
-   return variavel
+    variavel = variavel.replace(/\D/g, "");
+    variavel = variavel.replace(/(\d{5})(\d)/, "$1-$2"); // 00000-000
+    return variavel;
 }
 
-//mascara DATA
-
-fuction data(variavel){
-
-    variavel=variavel.replace (/\D/g,"")
-
-    variavel=variavel.replace /()
+// Máscara da Data
+function data(variavel) {
+    variavel = variavel.replace(/\D/g, "");
+    variavel = variavel.replace(/(\d{2})(\d)/, "$1/$2"); // 00/00
+    variavel = variavel.replace(/(\d{2})(\d)/, "$1/$2"); // 00/00/0000
+    return variavel;
 }
