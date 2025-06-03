@@ -3,7 +3,7 @@ USE senai_login;
 
 Drop database senai_login;
 
--- Estrutura para tabela `cliente`
+-- Estrutura para tabela `cliente`s
 --
 
 DROP TABLE IF EXISTS `cliente`;
